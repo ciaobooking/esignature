@@ -1,0 +1,38 @@
+{
+    "name": "ciaobooking/e-signatures",
+    "description": "E-Signatures for Laravel",
+    "license": "proprietary",
+    "version": "0.0.1",
+    "keywords": [
+        "laravel",
+        "e-signatures"
+    ],
+    "authors": [
+        {
+            "name": "CiaoBooking",
+            "email": "info@ciaobooking.com",
+            "homepage": "https://www.ciaobooking.com"
+        }
+    ],
+    "support": {
+        "email": "support@ciaobooking.org"
+    },
+    "require": {
+        "php": "^7.4|^8.0",
+        "laravel/framework": "^7.0",
+        "ciaobooking/requester": "0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ESignatures\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ESignatures\\Providers\\ESignaturesServiceProvider"
+            ]
+        }
+    }
+}
+
