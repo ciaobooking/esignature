@@ -22,7 +22,7 @@ class TemplateService extends BaseService
 
         $this->authenticate();
 
-        return $this->request->setParams($data)->get("templates");
+        return $this->prepareParams($data)->get("templates");
     }
 
     /**
@@ -37,6 +37,6 @@ class TemplateService extends BaseService
 
         $this->authenticate();
 
-        return $this->request->setParams($data)->get("templates/$id");
+        return $this->prepareParams($data)->get("templates/$id");
     }
 }

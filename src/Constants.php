@@ -24,6 +24,13 @@ class Constants
     const BASE_URL = 'https://esignatures.io/api/';
 
     /**
+     * Statuses
+     */
+    const STATUS_SENT = 'sent';
+    const STATUS_SIGNED = 'signed';
+    const STATUS_WITHDRAWN = 'withdrawn';
+
+    /**
      * Hooks
      */
     const HOOK_ERROR = 'error';

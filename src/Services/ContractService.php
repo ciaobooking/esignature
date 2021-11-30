@@ -23,7 +23,7 @@ class ContractService extends BaseService
 
         $this->authenticate();
 
-        return $this->request->setParams($data)->get("contracts/$id");
+        return $this->prepareParams($data)->get("contracts/$id");
     }
 
     /**
@@ -37,7 +37,7 @@ class ContractService extends BaseService
 
         $this->authenticate();
 
-        return $this->request->setParams($data)->post("contracts");
+        return $this->prepareParams($data)->post("contracts");
     }
 
     /**
@@ -52,6 +52,6 @@ class ContractService extends BaseService
 
         $this->authenticate();
 
-        return $this->request->setParams($data)->post("contracts/$id/withdraw");
+        return $this->prepareParams($data)->post("contracts/$id/withdraw");
     }
 }

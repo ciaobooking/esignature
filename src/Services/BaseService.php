@@ -45,10 +45,21 @@ abstract class BaseService
     {
         $this->request->addHeader('Authorization', 'Basic ' . base64_encode($this->config['secret_key']));
 
+        return $this;
+    }
+
+    /**
+     * @param array $data
+     * @return Request
+     */
+    protected function prepareParams(array $data): Request
+    {
+        $this->request->setParams($data);
+
         if (Arr::get($this->config, 'environment') === Constants::ENV_SANDBOX) {
             $this->request->addParam('test', 'yes');
         }
 
-        return $this;
+        return $this->request;
     }
 }

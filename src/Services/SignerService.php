@@ -24,7 +24,7 @@ class SignerService extends BaseService
 
         $this->authenticate();
 
-        return $this->request->setParams($data)->post("contracts/$contractId/signers/$id");
+        return $this->prepareParams($data)->post("contracts/$contractId/signers/$id");
     }
 
     /**
@@ -40,6 +40,6 @@ class SignerService extends BaseService
 
         $this->authenticate();
 
-        return $this->request->setParams($data)->post("contracts/$contractId/signers/$id/send_contract");
+        return $this->prepareParams($data)->post("contracts/$contractId/signers/$id/send_contract");
     }
 }

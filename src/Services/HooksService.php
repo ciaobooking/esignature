@@ -8,6 +8,7 @@ use ESignatures\Constants;
 use ESignatures\Events\HookEvent;
 use ESignatures\Events\HookFailed;
 use ESignatures\Events\HookSucceed;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Class HooksService
@@ -22,6 +23,10 @@ class HooksService extends BaseService
      */
     public function received(array $data): array
     {
+        Validator::make($data, [
+            'status' => 'required',
+        ])->validate();
+
         if (!in_array($data['status'], $this->getStatuses())) {
             throw new HookNotFoundException($data['status']);
         }
